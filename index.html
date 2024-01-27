@@ -1,36 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Norway's Parishes</title>
-    <style>
-      @import "src/style.css";
-    </style>
-  </head>
-  <body>
-    <calcite-shell>
 
-      <h2 slot="header" id="title">Norway's Parishes</h2>
-      <arcgis-map item-id="454a0303bffb487abf2d6c2c36ff4f0f" >
-        <arcgis-expand position="bottom-left" group="left">
-          <arcgis-legend />
-        </arcgis-expand>
-        <!-- <arcgis-expand position="top-left" group="left">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Norway's Parishes</title>
+  <style>
+    @import "src/style.css";
+  </style>
+</head>
+
+<body>
+  <calcite-shell>
+
+    <h2 slot="header" id="title">Norway's Parishes</h2>
+    <arcgis-map item-id="454a0303bffb487abf2d6c2c36ff4f0f">
+      <arcgis-expand position="bottom-left" group="left">
+        <arcgis-legend />
+      </arcgis-expand>
+      <!-- <arcgis-expand position="top-left" group="left">
           <arcgis-basemap-gallery />
         </arcgis-expand> -->
-      </arcgis-map>
-      <calcite-shell-panel slot="panel-end" position="end" width-scale="l" display-mode="dock" collapsed>
+    </arcgis-map>
+    <calcite-shell-panel slot="panel-end" position="end" width-scale="l" display-mode="dock" collapsed>
 
-        <calcite-action-bar slot="action-bar">
-          <calcite-action data-action-id="parish-search" text="Find a parish" icon="search"></calcite-action>
-          <calcite-action data-action-id="feature-details" text="Parish info" icon="feature-details"></calcite-action>
-          <calcite-tooltip slot="expand-tooltip">Toggle Action Bar</calcite-tooltip>
-        </calcite-action-bar>
+      <calcite-action-bar slot="action-bar">
+        <calcite-action data-action-id="parish-search" text="Find a parish" icon="search"></calcite-action>
+        <calcite-action data-action-id="feature-details" text="Parish info" icon="feature-details"></calcite-action>
+        <calcite-tooltip slot="expand-tooltip">Toggle Action Bar</calcite-tooltip>
+      </calcite-action-bar>
 
-        <calcite-panel heading="Find a parish" id="parish-search" data-panel-id="parish-search" width-scale="l" hidden>
-          <div class="panel-content">
+      <calcite-panel heading="Find a parish" id="parish-search" data-panel-id="parish-search" width-scale="l" hidden>
+        <div class="panel-content">
           <arcgis-search id="parish-search-widget" />
 
           <calcite-label>
@@ -61,19 +63,22 @@
             </calcite-combobox>
           </calcite-label>
 
-          </div>
-        </calcite-panel>
+        </div>
+      </calcite-panel>
 
-        <calcite-panel heading="Parish details" id="feature-details" data-panel-id="feature-details" width-scale="l" hidden>
-          <div class="panel-content">
+      <calcite-panel heading="Parish details" id="feature-details" data-panel-id="feature-details" width-scale="l"
+        hidden>
+        <div class="panel-content">
           <calcite-label>Select a parish in the map or in the parish search tool.</calcite-label>
           <calcite-loader id="parish-panel-loader" label="Loading details..." hidden></calcite-loader>
-          </div>
-        </calcite-panel>
-      </calcite-shell-panel>
+          <arcgis-features id="features-widget" /></arcgis-features>
+        </div>
+      </calcite-panel>
+    </calcite-shell-panel>
 
-    </calcite-shell>
+  </calcite-shell>
 
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
