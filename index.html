@@ -16,9 +16,6 @@
 
     <h2 slot="header" id="title">Norway's Parishes</h2>
     <arcgis-map item-id="454a0303bffb487abf2d6c2c36ff4f0f">
-      <arcgis-expand position="bottom-left" group="left">
-        <arcgis-legend />
-      </arcgis-expand>
       <!-- <arcgis-expand position="top-left" group="left">
           <arcgis-basemap-gallery />
         </arcgis-expand> -->
@@ -28,16 +25,16 @@
       <calcite-action-bar slot="action-bar">
         <calcite-action data-action-id="parish-search" text="Find a parish" icon="search"></calcite-action>
         <calcite-action data-action-id="feature-details" text="Parish info" icon="feature-details"></calcite-action>
+        <calcite-action data-action-id="legend" text="Legend" icon="legend"></calcite-action>
         <calcite-tooltip slot="expand-tooltip">Toggle Action Bar</calcite-tooltip>
       </calcite-action-bar>
 
       <calcite-panel heading="Find a parish" id="parish-search" data-panel-id="parish-search" width-scale="l" hidden>
         <div class="panel-content">
-          <arcgis-search id="parish-search-widget" />
 
           <calcite-label>
             County (fylke)
-            <calcite-combobox placeholder="Select county name" selection-mode="single">
+            <calcite-combobox placeholder="Select county name" selection-mode="single" id="county-combobox">
               <calcite-combobox-item value="Aust-Agder" text-label="Aust-Agder"></calcite-combobox-item>
               <calcite-combobox-item value="Vest-Agder" text-label="Vest-Agder"></calcite-combobox-item>
             </calcite-combobox>
@@ -55,7 +52,7 @@
 
           <calcite-label>
             Local parish (sokn)
-            <calcite-combobox placeholder="Select local parish name" selection-mode="single">
+            <calcite-combobox placeholder="Select local parish name" selection-mode="single" id="parish-combobox">
               <calcite-combobox-item-group label="Aust-Agder">
                 <calcite-combobox-item value="Holt" text-label="Holt"></calcite-combobox-item>
                 <calcite-combobox-item value="Dypvåg" text-label="Dypvåg"></calcite-combobox-item>
@@ -63,7 +60,17 @@
             </calcite-combobox>
           </calcite-label>
 
+          <calcite-label>
+            Farm/property
+            <arcgis-search id="parish-search-widget" />
+          </calcite-label>
+
         </div>
+      </calcite-panel>
+
+      <calcite-panel heading="Legend" id="legend" data-panel-id="legend" width-scale="l"
+        hidden>
+        <arcgis-legend />
       </calcite-panel>
 
       <calcite-panel heading="Parish details" id="feature-details" data-panel-id="feature-details" width-scale="l"

@@ -26,3 +26,7 @@ calcite-shell-panel {
 .panel-content {
   padding: 1em;
 }
+
+.esri-search {
+  width: 100%;
+}
