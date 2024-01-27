@@ -53,16 +53,6 @@ const loadMap = async () => {
   document
     .querySelector("calcite-action-bar")
     ?.addEventListener("click", handleActionBarClick);
-
-  let actionBarExpanded = false;
-
-  document.addEventListener("calciteActionBarToggle", () => {
-    actionBarExpanded = !actionBarExpanded;
-    view!.padding = {
-      right: actionBarExpanded ? 150 : 49,
-    };
-  });
-
 }
 
 if (mapElement!.ready) {
