@@ -1,0 +1,28 @@
+@import "@arcgis/core/assets/esri/themes/light/main.css";
+@import "@esri/calcite-components/dist/calcite/calcite.css";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+arcgis-map{
+  height: 100%;
+  width: 100%;
+}
+#title{
+  margin-left: 1em;
+}
+#message-loader {
+  height: 50px;
+  float: right;
+}
+calcite-shell-panel {
+  --calcite-shell-panel-min-width: 200px;
+  --calcite-shell-panel-max-width: 30vw;
+}
+.panel-content {
+  padding: 1em;
+}
