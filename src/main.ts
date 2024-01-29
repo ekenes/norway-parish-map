@@ -46,10 +46,10 @@ const loadMap = async () => {
   // Open the Features widget with features fetched from
   // the view click event location.
 
-  mapElement?.addEventListener("arcgisViewClick", (event: any) => {
+  mapElement?.addEventListener("arcgisViewClick", (event) => {
     event.stopPropagation();
     featuresElement!.open({
-      location: event.mapPoint,
+      location: event.detail.mapPoint,
       fetchFeatures: true,
     });
   });
