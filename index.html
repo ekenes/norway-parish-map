@@ -15,11 +15,7 @@
   <calcite-shell>
 
     <h2 slot="header" id="title">Norway's Parishes</h2>
-    <arcgis-map item-id="454a0303bffb487abf2d6c2c36ff4f0f">
-      <!-- <arcgis-expand position="top-left" group="left">
-          <arcgis-basemap-gallery />
-        </arcgis-expand> -->
-    </arcgis-map>
+    <arcgis-map id="map-view" item-id="454a0303bffb487abf2d6c2c36ff4f0f"></arcgis-map>
     <calcite-shell-panel slot="panel-end" position="end" width-scale="l" display-mode="dock" collapsed>
 
       <calcite-action-bar slot="action-bar">
@@ -62,7 +58,7 @@
 
           <calcite-label>
             Farm/property
-            <arcgis-search id="parish-search-widget" />
+            <arcgis-search id="parish-search-widget" reference-element="#map-view" />
           </calcite-label>
 
         </div>
@@ -70,7 +66,7 @@
 
       <calcite-panel heading="Legend" id="legend" data-panel-id="legend" width-scale="l"
         hidden>
-        <arcgis-legend />
+        <arcgis-legend reference-element="#map-view" />
       </calcite-panel>
 
       <calcite-panel heading="Parish details" id="feature-details" data-panel-id="feature-details" width-scale="l"
@@ -78,7 +74,7 @@
         <div class="panel-content">
           <calcite-label>Select a parish in the map or in the parish search tool.</calcite-label>
           <calcite-loader id="parish-panel-loader" label="Loading details..." hidden></calcite-loader>
-          <arcgis-features id="features-widget" /></arcgis-features>
+          <arcgis-features id="features-widget" reference-element="#map-view" /></arcgis-features>
         </div>
       </calcite-panel>
     </calcite-shell-panel>

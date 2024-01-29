@@ -14,7 +14,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@arcgis/map-components": "^4.29.0-beta.90",
+    "@arcgis/map-components": "^4.29.0-beta.91",
     "esbuild": "^0.19.12",
     "fsevents": "^2.3.3",
     "nanoid": "^3.3.7",
